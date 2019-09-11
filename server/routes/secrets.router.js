@@ -14,7 +14,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     console.log('req.user:', req.user);
-    const queryText = `SELECT * FROM "user" WHERE "clearance_level" <= $1;`;
+    const queryText = `SELECT * FROM "secret" WHERE "secrecy_level" <= $1;`;
     // see if user is authenticated and if so respond with data user is cleared for
     // if user is not authenticated respond with forbidden error
     if (req.isAuthenticated()) {
